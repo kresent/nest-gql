@@ -1,0 +1,23 @@
+type Query {
+  getCities: [City]
+  city(id: ID!): City
+}
+
+type Mutation {
+  createCity(createCityInput: CreateCityInput): City
+}
+
+type Subscription {
+  cityCreated: City
+}
+
+type City {
+  id: Int
+  name: String
+  population: Int
+}
+
+input CreateCityInput {
+  name: String
+  population: Int
+}
